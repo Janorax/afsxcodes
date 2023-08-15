@@ -1,0 +1,34 @@
+local function redeemCode(code)
+    local args = {
+        [1] = "Redeem",
+        [2] = code
+    }
+
+    game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("Codes/RemoteFunction"):InvokeServer(unpack(args))
+end
+
+local codesToRedeem = {
+    "bugFixwithYenOMG",
+    "125KLIKESOMG",
+    "UPDATE2OUTNOW",
+    "AnotherQuickPatchUpdate",
+    "LETSGO100K",
+    "sorryForShutdown",
+    "75KLIKESOMG",
+    "OMG20KLIKES",
+    "UPDATE1OUTNOW",
+    "NICESHUTDOWN",
+    "AWESOME50KLIKES",
+    "bruh3shutdowns",
+    "anotherBugFixes",
+    "bugsFixes",
+    "35KWOW",
+    "RELEASE", 
+}
+
+for _, code in ipairs(codesToRedeem) do
+    spawn(function()
+        redeemCode(code)
+    end)
+    wait(5)
+end
